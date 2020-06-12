@@ -1,0 +1,21 @@
+<div id="about-div" class="page-div centered">
+
+    <div id="about-box">
+      <div class="header">
+        <a target="_blank">
+          <img src="media/me.jpg" />
+        </a>
+        <h1>{{ site.author }}</h1>
+        <p>{{ site.intro }}</p>
+      </div>
+    </div>
+
+</div>
+
+<div id="social-box">
+  {% for item in site.data.social %}
+    <a href="{{ item.href }}" target="_blank">
+        <i class="fa fa-{{ item.icon }} fa-lg"></i>
+    </a>
+  {% endfor %}
+</div>

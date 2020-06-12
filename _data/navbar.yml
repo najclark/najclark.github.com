@@ -1,0 +1,9 @@
+- name: Projects
+  file: projects.html
+  default: false
+- name: About Me
+  file: about.html
+  default: true
+- name: Experience
+  file: experience.html
+  default: false

@@ -1,0 +1,50 @@
+<div id="experience-div" class="page-div">
+
+  <div class="centered" id="info-box">
+
+      {% for item in site.data.experience %}
+        {% if forloop.first %}
+        <div id="{{ item.title }}" class="card active-experience">
+        {% else %}
+        <div id="{{ item.title }}" class="card hidden-experience">
+        {% endif %}
+          <div class="header">
+            {% if item.img.size > 0 %}
+                <a href="{{ item.href }}" target="_blank">
+                    <img src="{{ item.img }}">
+                </a>
+            {% endif %}
+            <h1>{{ item.title }}</h1>
+            <h2>{{ item.position }}</h2>
+          </div>
+          <div class="details">
+            <h3>Responsibilities</h3>
+            <p>{{ item.responsibilities }}</p>
+            <h3>Learning Outcome</h3>
+            <p>{{ item.learning }}</p>
+          </div>
+        </div>
+      {% endfor %}
+
+  </div>
+  <pre class="tree">
+    experience
+    {% for item in site.data.experience %}
+      +-- <button onclick="changeExperience('{{ item.title }}')">{{ item.title }}</button>
+    {% endfor %}
+  </pre>
+</div>
+
+<script type="text/javascript">
+  function changeExperience(title) {
+    // should only be one element with class 'active-experience'
+    oldExperience = document.getElementsByClassName("active-experience")[0];
+    oldExperience.classList.remove("active-experience");
+    oldExperience.classList.add("hidden-experience");
+
+    newExperience = document.getElementById(title);
+    newExperience.classList.remove("hidden-experience");
+    newExperience.classList.add("active-experience");
+
+  }
+</script>

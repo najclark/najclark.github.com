@@ -1,0 +1,52 @@
+<div id="projects-div" class="page-div">
+
+  <div class="centered" id="info-box">
+
+      {% for item in site.data.projects %}
+        {% if forloop.first %}
+        <div id="{{ item.name }}" class="card active-project">
+        {% else %}
+        <div id="{{ item.name }}" class="card hidden-project">
+        {% endif %}
+          <div class="header">
+            {% if item.img.size > 0 %}
+                <a href="{{ item.href }}" target="_blank">
+                    <img src="{{ item.img }}">
+                </a>
+            {% endif %}
+            <h1>{{ item.name }}</h1>
+            <h2>{{ item.date }}</h2>
+          </div>
+          <div class="details">
+            <h3>Overview</h3>
+            <p>{{ item.overview }}</p>
+            <h3>Background</h3>
+            <p>{{ item.background }}</p>
+            <h3>Learning Outcome</h3>
+            <p>{{ item.learning }}</p>
+          </div>
+        </div>
+      {% endfor %}
+
+  </div>
+  <pre class="tree">
+    projects
+    {% for item in site.data.projects %}
+      +-- <button onclick="changeProject('{{ item.name }}')">{{ item.name }}</button>
+    {% endfor %}
+  </pre>
+</div>
+
+<script type="text/javascript">
+  function changeProject(name) {
+    // should only be one element with class 'active-project'
+    oldProject = document.getElementsByClassName("active-project")[0];
+    oldProject.classList.remove("active-project");
+    oldProject.classList.add("hidden-project");
+
+    newProject = document.getElementById(name);
+    newProject.classList.remove("hidden-project");
+    newProject.classList.add("active-project");
+
+  }
+</script>

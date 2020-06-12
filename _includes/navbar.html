@@ -1,0 +1,48 @@
+<div class="slides">
+{% assign left = true %}
+{% for slide in site.data.navbar %}
+  {% if slide.default == true %}
+    {% assign left = false %}
+    <div id="{{ slide.file }}" class="active-page"> {% include {{ slide.file }} %} </div>
+  {% else %}
+    {% if left %}
+      <div id="{{ slide.file }}" class="hidden-page left"> {% include {{ slide.file }} %} </div>
+    {% else %}
+      <div id="{{ slide.file }}" class="hidden-page right"> {% include {{ slide.file }} %} </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<div class="navbar">
+  {% for slide in site.data.navbar %}
+    {% if slide.default == true %}
+    <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="changePage('{{ slide.file }}')">
+    {% else %}
+    <button id="{{ slide.file }}-btn" class="nav-item" onclick="changePage('{{ slide.file }}')">
+    {% endif %}
+      {{ slide.name }}
+    </button>
+  {% endfor %}
+</div>
+</div>
+
+<script type="text/javascript">
+  function changePage(newPage) {
+    // should only be one element with class 'active-page'
+    old_page = document.getElementsByClassName("active-page")[0];
+    old_page.classList.remove("active-page");
+    old_page.classList.add("hidden-page");
+
+    new_page = document.getElementById(newPage);
+    new_page.classList.remove("hidden-page");
+    new_page.classList.add("active-page");
+    // new_page.classList.add("left");
+
+    old_btn = document.getElementsByClassName("active-btn")[0];
+    old_btn.classList.remove("active-btn");
+
+    new_btn = document.getElementById(newPage.concat("-btn"));
+    new_btn.classList.add("active-btn");
+
+  }
+</script>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Nicholas Clark</title>
+    <style>.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+div.hidden-page {
+  display: none;
+}
+
+/* div.hidden-page.left {
+  transform: translateX(-150%);
+}
+
+div.hidden-page.right {
+  transform: translateX(150%);
+}
+
+.active-page {
+  transition: 1s;
+  left: 0;
+} */
+
+.navbar {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-item {
+  margin: 10px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  overflow: hidden;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+  outline-color: white;
+  color: white;
+  font-size: 16px;
+}
+
+.nav-item.active-btn {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.page-div {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.card {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 0.5em;
+  background-color: white;
+  color: #666;
+  margin-bottom: 1.5em;
+}
+
+.hidden-project, .hidden-experience {
+  display: none;
+}
+
+.header {
+  overflow: auto;
+}
+
+.header > a > img {
+  float: left;
+  margin-right: 0.75em;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 0.5em;
+}
+
+.header > h1 {
+  color: black;
+  margin: 0;
+  font-size: 2em;
+}
+
+.header > h2 {
+  color: #444;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.details > h3 {
+  color: black;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.tree {
+  position: absolute;
+  top: 5%;
+}
+
+.tree.hidden-tree {
+  display: none;
+}
+
+.tree > button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#about-div {
+  background-color: #3498db;
+}
+
+#projects-div {
+  background-color: #e74c3c;
+}
+
+#experience-div {
+  background-color: #1abc9c;
+}
+
+#about-box {
+  display: block;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 0.5em;
+  background-color: white;
+  color: #666;
+  margin-bottom: 1.5em;
+  width: 60%;
+}
+
+#social-box {
+  position: absolute;
+  top: 0%;
+  right: 1%;
+  transform: translate(-100%, -20%);
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 10px;
+}
+
+#social-box > a {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none; !important;
+  color: black;
+}
+</style>
+        <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    </head>
+    <body>
+      <div class="slides">
+
+
+  
+    
+      <div id="projects.html" class="hidden-page left"> <div id="projects-div" class="page-div">
+
+  <div class="centered" id="info-box">
+
+      
+        
+        <div id="Bar Exam" class="card active-project">
+        
+          <div class="header">
+            
+                <a href="https://www.sdsc.edu/" target="_blank">
+                    <img src="https://sciencenode.org/supportedby/logo/sponsor-sdsc-logo.jpg">
+                </a>
+            
+            <h1>Bar Exam</h1>
+            <h2>Early 2020</h2>
+          </div>
+          <div class="details">
+            <h3>Overview</h3>
+            <p>Designed as an entertainment application that challenges a user's ability to match musical lyrics with its original artist before time expires. The current state of the application allows the user to enter game mode and match lyrical selections from previously populated data models. In addition, the user has an option to contribute to the lyrical repository by imputing lyrics of their choosing. Results of the game are recorded and posted whenever the user fails to correctly match an artist with their lyrics. </p>
+            <h3>Background</h3>
+            <p>Project was developed to enhance my full stack experience using React.JS, JavaScript, CSS, MySQL database and API integration; as well as providing an entertaining experience to a user.</p>
+            <h3>Learning Outcome</h3>
+            <p>To Do...write info on some of the things or experiences that were developed / learned as a result of creating the project. You can also list some of the difficult challenges that you had to overcome to make it happen. You can also list some of the proposed enhancements that could further enhance the project.</p>
+          </div>
+        </div>
+      
+        
+        <div id="Binary Counter" class="card hidden-project">
+        
+          <div class="header">
+            
+                <a href="google.com" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
+                </a>
+            
+            <h1>Binary Counter</h1>
+            <h2>Test2</h2>
+          </div>
+          <div class="details">
+            <h3>Overview</h3>
+            <p>In an effort to assist an AP Computer Science instructor in communicating the binary counting system, I manufactured a tool that counted and projected a visual representation. The system permitted a user to view a decimal value [0-255] with their corresponding binary representation in both an automatic and manual mode. The overall user experience was simple, straight-forward and required little explanation. The device positively contributed to the learning experience of the students and greatly improved letter grades within the next exam cycle. Proving that the work I do can make a difference. </p>
+            <h3>Background</h3>
+            <p>This was an electro-mechanical device that utilized an Raspberry Pi micro-controller to process and display data. The electrical components consisted of a Shift Register circuit, 7-Segment Display, LED's [Light Emitting Diodes] and a battery power source. A wiring-harness and plexi-glass fixture were machined to provide a seamless integration and enhance the user's experience.</p>
+            <h3>Learning Outcome</h3>
+            <p>To Do…</p>
+          </div>
+        </div>
+      
+        
+        <div id="Genetic Learning Library" class="card hidden-project">
+        
+          <div class="header">
+            
+                <a href="https://www.jointheleague.org/" target="_blank">
+                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                </a>
+            
+            <h1>Genetic Learning Library</h1>
+            <h2>Test3</h2>
+          </div>
+          <div class="details">
+            <h3>Overview</h3>
+            <p>To Do…</p>
+            <h3>Background</h3>
+            <p>To Do…</p>
+            <h3>Learning Outcome</h3>
+            <p>To Do…</p>
+          </div>
+        </div>
+      
+        
+        <div id="CNC Milling Machine" class="card hidden-project">
+        
+          <div class="header">
+            
+                <a href="https://www.jointheleague.org/" target="_blank">
+                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                </a>
+            
+            <h1>CNC Milling Machine</h1>
+            <h2>Test4</h2>
+          </div>
+          <div class="details">
+            <h3>Overview</h3>
+            <p>To provide my high school's Innovation laboratory with the ability to fabricate machined parts for education and faculty usage. I led a five member team charged with designing, building and implementing a solution capable of milling medium-density metal materials as large as 2FT x 2FT x 2FT. </p>
+            <h3>Background</h3>
+            <p>Implementing this solution required extensive research involving power requirements, machining, and environmental concerns. As a result, outside sources were consulted and provided mentorship in the execution of this project. Engineering drawings were created, parts and components were procured from a variety of sources [including overseas providers] and ...challenged with delivering a software solution that integrated CNC xxx code with xxxx to ensure that our solution operated efficiently on the X, Y and Z axes. An Arduino Microcontroller with a custom motor shield was selected to manage milling operation and communication activities.</p>
+            <h3>Learning Outcome</h3>
+            <p>To Do…</p>
+          </div>
+        </div>
+      
+
+  </div>
+  <pre class="tree">
+    projects
+    
+      +-- <button onclick="changeProject('Bar Exam')">Bar Exam</button>
+    
+      +-- <button onclick="changeProject('Binary Counter')">Binary Counter</button>
+    
+      +-- <button onclick="changeProject('Genetic Learning Library')">Genetic Learning Library</button>
+    
+      +-- <button onclick="changeProject('CNC Milling Machine')">CNC Milling Machine</button>
+    
+  </pre>
+</div>
+
+<script type="text/javascript">
+  function changeProject(name) {
+    // should only be one element with class 'active-project'
+    oldProject = document.getElementsByClassName("active-project")[0];
+    oldProject.classList.remove("active-project");
+    oldProject.classList.add("hidden-project");
+
+    newProject = document.getElementById(name);
+    newProject.classList.remove("hidden-project");
+    newProject.classList.add("active-project");
+
+  }
+</script>
+ </div>
+    
+  
+
+  
+    
+    <div id="about.html" class="active-page"> <div id="about-div" class="page-div centered">
+
+    <div id="about-box">
+      <div class="header">
+        <a target="_blank">
+          <img src="media/me.jpg" />
+        </a>
+        <h1>Nicholas Clark</h1>
+        <p>With my feet firmly planted on solid ground, my imagination continuously points towards the stars. As a Computer Science major at Carnegie Mellon University, I've committed myself to developing strong software fundamentals while challenging my imagination to look beyond what lies before me. I consider myself an ideal candidate for a Software Engineering Internship opportunity. I have a unique balance of strong academic skills, practical work experiences, and various software projects that support my continued upward trajectory towards a rewarding career in the science and technology industry.
+</p>
+      </div>
+    </div>
+
+</div>
+
+<div id="social-box">
+  
+    <a href="http://github.com/najclark" target="_blank">
+        <i class="fa fa-github fa-lg"></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/in/nicholas-clark-3a42361a0/" target="_blank">
+        <i class="fa fa-linkedin fa-lg"></i>
+    </a>
+  
+    <a href="mailto:nicholas@californiaclarks.com" target="_blank">
+        <i class="fa fa-envelope fa-lg"></i>
+    </a>
+  
+</div>
+ </div>
+  
+
+  
+    
+      <div id="experience.html" class="hidden-page right"> <div id="experience-div" class="page-div">
+
+  <div class="centered" id="info-box">
+
+      
+        
+        <div id="SD Supercomputer Center" class="card active-experience">
+        
+          <div class="header">
+            
+                <a href="https://www.sdsc.edu/" target="_blank">
+                    <img src="https://sciencenode.org/supportedby/logo/sponsor-sdsc-logo.jpg">
+                </a>
+            
+            <h1>SD Supercomputer Center</h1>
+            <h2>Intern</h2>
+          </div>
+          <div class="details">
+            <h3>Responsibilities</h3>
+            <p>Assigned to a three person team, we were challenged with devising a software solution that would alleviate unnecessary bottleneck access to the Gordon Supercomputer network. Located on the campus of the University of California San Diego, delays associated with accessing this resource, limits important investigative research and experimentation from research scientists from around the world.</p>
+            <h3>Learning Outcome</h3>
+            <p>The team approach to resolving issues associated with the Support Ticket Response System, introduced me to the Software Development Life Cycle [SDLC] within an Agile Development environment. In the process of delivering code on a daily basis, I gained valuable insight into Continuous Integration / Continuous Development [CI/CD] as well as the importance of incorporating Unit Testing throughout the process. In addition, I gained invaluable insights into a variety of Machine Learning [ML] modeling as well as their applications. This area of technology is of particular interest as my college studies will continue to explore developments in these areas through classroom discussions and specialized research opportunities.</p>
+          </div>
+        </div>
+      
+        
+        <div id="Eye Physicians Clinic" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="google.com" target="_blank">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
+                </a>
+            
+            <h1>Eye Physicians Clinic</h1>
+            <h2>Intern</h2>
+          </div>
+          <div class="details">
+            <h3>Responsibilities</h3>
+            <p>Provided physician assistance and observations during eye surgical procedures. </p>
+            <h3>Learning Outcome</h3>
+            <p>This experience opened my eyes to the unique intersection between biological science, technology, and human interactions. I was fortunate to witness an end-user's complete confidence and reliability of an automated surgical piece of equipment during surgical procedures. On each occasion, my eyes opened wider to the realization of the many people, process and procedures that had to happen to make these experiences successful. Although this opportunity wasn't a hands-on software development experience, it has reassured my understanding that delivering reliable software solutions have consequences and contributes significantly to their overall user experience. </p>
+          </div>
+        </div>
+      
+        
+        <div id="The League Of Amazing Programmers" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="https://www.jointheleague.org/" target="_blank">
+                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                </a>
+            
+            <h1>The League Of Amazing Programmers</h1>
+            <h2>Volunteer</h2>
+          </div>
+          <div class="details">
+            <h3>Responsibilities</h3>
+            <p>As a sixth grade student, participating in an after-hours Java programming curriculum with the Wintriss Technical Schools [now known as The League of Amazing Programmers], I excelled to an Oracle Certified Java Programmer level over the course of two years. As a result, I maintained a relationship with the organization as a Volunteer, and was assigned to support local non-profit organizations requiring technical support. Assigned to develop a software Inventory Management solution for the the San Diego Food Alliance, I designed and implemented a web-based food distribution application. The system proved to be critical in matching perishable food items with GIS [graphical information] with distribution centers most in need for those items.      </p>
+            <h3>Learning Outcome</h3>
+            <p>Initially viewed as a cool inventory management system, I quickly realized how delicate and deprived many people are without the support from services like the San Diego Food Alliance. During the implementation of this solution, a Model-View-Controller scheme, Node.JS, Javascript, and CSS were used to build-out an intuitive user interface that was simple to use without the need for extensive training. For managing the back-end inventory storage requirements, a No-SQL MongoDB database was used. In addition to delivering this solution, I continued to provide additional support for an additional year where I performed bug fixes and new feature functionality when required. </p>
+          </div>
+        </div>
+      
+
+  </div>
+  <pre class="tree">
+    experience
+    
+      +-- <button onclick="changeExperience('SD Supercomputer Center')">SD Supercomputer Center</button>
+    
+      +-- <button onclick="changeExperience('Eye Physicians Clinic')">Eye Physicians Clinic</button>
+    
+      +-- <button onclick="changeExperience('The League Of Amazing Programmers')">The League Of Amazing Programmers</button>
+    
+  </pre>
+</div>
+
+<script type="text/javascript">
+  function changeExperience(title) {
+    // should only be one element with class 'active-experience'
+    oldExperience = document.getElementsByClassName("active-experience")[0];
+    oldExperience.classList.remove("active-experience");
+    oldExperience.classList.add("hidden-experience");
+
+    newExperience = document.getElementById(title);
+    newExperience.classList.remove("hidden-experience");
+    newExperience.classList.add("active-experience");
+
+  }
+</script>
+ </div>
+    
+  
+
+
+<div class="navbar">
+  
+    
+    <button id="projects.html-btn" class="nav-item" onclick="changePage('projects.html')">
+    
+      Projects
+    </button>
+  
+    
+    <button id="about.html-btn" class="nav-item active-btn" onclick="changePage('about.html')">
+    
+      About Me
+    </button>
+  
+    
+    <button id="experience.html-btn" class="nav-item" onclick="changePage('experience.html')">
+    
+      Experience
+    </button>
+  
+</div>
+</div>
+
+<script type="text/javascript">
+  function changePage(newPage) {
+    // should only be one element with class 'active-page'
+    old_page = document.getElementsByClassName("active-page")[0];
+    old_page.classList.remove("active-page");
+    old_page.classList.add("hidden-page");
+
+    new_page = document.getElementById(newPage);
+    new_page.classList.remove("hidden-page");
+    new_page.classList.add("active-page");
+    // new_page.classList.add("left");
+
+    old_btn = document.getElementsByClassName("active-btn")[0];
+    old_btn.classList.remove("active-btn");
+
+    new_btn = document.getElementById(newPage.concat("-btn"));
+    new_btn.classList.add("active-btn");
+
+  }
+</script>
+
+    </body>
+</html>
