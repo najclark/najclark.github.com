@@ -1,9 +1,14 @@
 - name: Projects
+  link: false
   file: projects.html
   default: false
 - name: About Me
+  link: false
   file: about.html
   default: true
 - name: Experience
+  link: false
   file: experience.html
   default: false
+- name: Resume
+  link: https://drive.google.com/file/d/1xcgD_fZwQQTHw3dDoIklEua4vFXBdV9z/view?usp=sharing

@@ -1,24 +1,28 @@
 <div class="slides">
 {% assign left = true %}
 {% for slide in site.data.navbar %}
-  {% if slide.default == true %}
-    {% assign left = false %}
-    <div id="{{ slide.file }}" class="active-page"> {% include {{ slide.file }} %} </div>
-  {% else %}
-    {% if left %}
-      <div id="{{ slide.file }}" class="hidden-page left"> {% include {{ slide.file }} %} </div>
+  {% if slide.link == false %}
+    {% if slide.default == true %}
+      {% assign left = false %}
+      <div id="{{ slide.file }}" class="active-page"> {% include {{ slide.file }} %} </div>
     {% else %}
-      <div id="{{ slide.file }}" class="hidden-page right"> {% include {{ slide.file }} %} </div>
+      {% if left %}
+        <div id="{{ slide.file }}" class="hidden-page left"> {% include {{ slide.file }} %} </div>
+      {% else %}
+        <div id="{{ slide.file }}" class="hidden-page right"> {% include {{ slide.file }} %} </div>
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endfor %}
 
 <div class="navbar">
   {% for slide in site.data.navbar %}
-    {% if slide.default == true %}
-    <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="changePage('{{ slide.file }}')">
+    {% if slide.link %}
+      <button id="{{ slide.name }}-btn" class="nav-item" onclick="window.open('https://drive.google.com/file/d/1ViQSammYoddoYGyRgqM3nF2fR6w3HdvV/view?usp=sharing','_blank','resizable=yes')">
+    {% elsif slide.default == true %}
+      <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="changePage('{{ slide.file }}')">
     {% else %}
-    <button id="{{ slide.file }}-btn" class="nav-item" onclick="changePage('{{ slide.file }}')">
+      <button id="{{ slide.file }}-btn" class="nav-item" onclick="changePage('{{ slide.file }}')">
     {% endif %}
       {{ slide.name }}
     </button>
