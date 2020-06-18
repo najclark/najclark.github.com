@@ -1,3 +1,8 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+
 .centered {
   display: flex;
   flex-direction: column;
@@ -67,7 +72,8 @@ div.hidden-page.right {
   overflow: auto;
   border-radius: 0.5em;
   background-color: white;
-  color: #666;
+  color: #2C2B2B;
+  opacity: 70%;
   margin-bottom: 1.5em;
 }
 
@@ -79,7 +85,7 @@ div.hidden-page.right {
   overflow: auto;
 }
 
-.header > a > img {
+.header-img {
   float: left;
   margin-right: 0.75em;
   max-width: 200px;
@@ -109,32 +115,55 @@ div.hidden-page.right {
 .tree {
   position: absolute;
   top: 5%;
-}
-
-.tree.hidden-tree {
-  display: none;
+  color: #ffffff;
 }
 
 .tree > button {
   background: none!important;
   border: none;
   padding: 0!important;
-  /*input has OS specific font-family*/
-  color: #069;
-  text-decoration: underline;
+  color: #ffffff;
   cursor: pointer;
 }
 
-#about-div {
-  background-color: #3498db;
+.contact {
+  display: inline;
+  color: black;
 }
 
-#projects-div {
-  background-color: #e74c3c;
+.contact > i {
+  padding-right: 20px;
 }
 
-#experience-div {
-  background-color: #1abc9c;
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #background {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #background {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #background {
+    display: none;
+  }
+  body {
+    background: url('media/poster.png');
+    background-size: cover;
+  }
 }
 
 #about-box {
@@ -146,6 +175,15 @@ div.hidden-page.right {
   color: #666;
   margin-bottom: 1.5em;
   width: 60%;
+}
+
+#intro {
+  font-size: 18px;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 #social-box {
@@ -163,4 +201,33 @@ div.hidden-page.right {
   margin-right: 5px;
   text-decoration: none; !important;
   color: black;
+}
+
+#social-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#contact-card {
+  display: grid;
+  height: 50%;
+  width: 25%;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 0.5em;
+  background-color: white;
+  color: #2C2B2B;
+  opacity: 70%;
+  margin-bottom: 1.5em;
+}
+
+#contact-card > .header {
+  grid-area: 1 / 1 / 1 / 1;
+}
+
+#contact-card > #social-list {
+  grid-area: 2 / 1 / 5 / 1;
 }

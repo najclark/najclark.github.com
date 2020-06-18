@@ -2,7 +2,7 @@
 {% assign left = true %}
 {% for slide in site.data.navbar %}
   {% if slide.link == false %}
-    {% if slide.default == true %}
+    {% if forloop.first %}
       {% assign left = false %}
       <div id="{{ slide.file }}" class="active-page"> {% include {{ slide.file }} %} </div>
     {% else %}
@@ -19,7 +19,7 @@
   {% for slide in site.data.navbar %}
     {% if slide.link %}
       <button id="{{ slide.name }}-btn" class="nav-item" onclick="window.open('https://drive.google.com/file/d/1ViQSammYoddoYGyRgqM3nF2fR6w3HdvV/view?usp=sharing','_blank','resizable=yes')">
-    {% elsif slide.default == true %}
+    {% elsif forloop.first %}
       <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="changePage('{{ slide.file }}')">
     {% else %}
       <button id="{{ slide.file }}-btn" class="nav-item" onclick="changePage('{{ slide.file }}')">

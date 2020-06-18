@@ -1,4 +1,5 @@
-icon,href
-github,http://github.com/najclark
-linkedin,https://www.linkedin.com/in/nicholas-clark-3a42361a0/
-envelope,mailto:nicholas@californiaclarks.com
+icon,text,href
+github,Github,http://github.com/najclark
+linkedin,LinkedIn,https://www.linkedin.com/in/nicholas-clark-3a42361a0/
+envelope,nicholas@californiaclarks.com,mailto:nicholas@californiaclarks.com
+phone,(619)-392-9983,tel:1-619-392-9983

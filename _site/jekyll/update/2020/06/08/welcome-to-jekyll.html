@@ -2,7 +2,12 @@
 <html>
     <head>
     <title>Nicholas Clark</title>
-    <style>.centered {
+    <style>* {
+  font-family: 'Lato', sans-serif;
+}
+
+
+.centered {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +76,8 @@ div.hidden-page.right {
   overflow: auto;
   border-radius: 0.5em;
   background-color: white;
-  color: #666;
+  color: #2C2B2B;
+  opacity: 70%;
   margin-bottom: 1.5em;
 }
 
@@ -83,7 +89,7 @@ div.hidden-page.right {
   overflow: auto;
 }
 
-.header > a > img {
+.header-img {
   float: left;
   margin-right: 0.75em;
   max-width: 200px;
@@ -113,32 +119,55 @@ div.hidden-page.right {
 .tree {
   position: absolute;
   top: 5%;
-}
-
-.tree.hidden-tree {
-  display: none;
+  color: #ffffff;
 }
 
 .tree > button {
   background: none!important;
   border: none;
   padding: 0!important;
-  /*input has OS specific font-family*/
-  color: #069;
-  text-decoration: underline;
+  color: #ffffff;
   cursor: pointer;
 }
 
-#about-div {
-  background-color: #3498db;
+.contact {
+  display: inline;
+  color: black;
 }
 
-#projects-div {
-  background-color: #e74c3c;
+.contact > i {
+  padding-right: 20px;
 }
 
-#experience-div {
-  background-color: #1abc9c;
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #background {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #background {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #background {
+    display: none;
+  }
+  body {
+    background: url('media/poster.png');
+    background-size: cover;
+  }
 }
 
 #about-box {
@@ -150,6 +179,15 @@ div.hidden-page.right {
   color: #666;
   margin-bottom: 1.5em;
   width: 60%;
+}
+
+#intro {
+  font-size: 18px;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 #social-box {
@@ -168,9 +206,39 @@ div.hidden-page.right {
   text-decoration: none; !important;
   color: black;
 }
+
+#social-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#contact-card {
+  display: grid;
+  height: 50%;
+  width: 25%;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 0.5em;
+  background-color: white;
+  color: #2C2B2B;
+  opacity: 70%;
+  margin-bottom: 1.5em;
+}
+
+#contact-card > .header {
+  grid-area: 1 / 1 / 1 / 1;
+}
+
+#contact-card > #social-list {
+  grid-area: 2 / 1 / 5 / 1;
+}
 </style>
         <meta charset="utf-8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
     </head>
     <body>
@@ -180,7 +248,219 @@ div.hidden-page.right {
   
     
       
-        <div id="projects.html" class="hidden-page left"> <div id="projects-div" class="page-div">
+      <div id="about.html" class="active-page"> <div id="about-div" class="page-div centered">
+
+    <div id="about-box">
+      <div class="header">
+        <img class="header-img" src="media/me.jpg" />
+        <h1>Nicholas Clark</h1>
+        <h2>Carnegie Mellon University School of Computer Science</h2>
+        <pre id="intro">I’m a Carnegie Mellon University School of Computer Science student, who’s developed an unwavering passion for science and technology long before I stepped on campus. Throughout grade-school I competed in a variety of local and regionally recognized robotic and cyber security opportunities. While developing strong technical skills was a byproduct of my involvement, I also grew as an individual, with strong interpersonal skills, and a passion for working with others to solve challenging problems.
+
+My high school years were a discovery period in which I began to explore the cross-sections of classroom theory and practical applications to solving real problems. Through after-school programs and college courses, I developed proficiencies in programming languages and began sharing my software skills with non-profit organizations serving my community.
+
+As a college student, I’m incredibly grateful to be a part of the Carnegie Mellon University School of Computer Science. The education, community, and opportunities available continue to serve my never-ending-thirst to continue growing towards a career in computer science. The culmination of my varied experiences have contributed towards establishing my voice and the person I’ve become, and as our campus mantra goes, “My Heart Is in the Work”.
+</pre>
+      </div>
+    </div>
+
+</div>
+
+<div id="social-box">
+  
+    <a href="http://github.com/najclark" target="_blank">
+        <i class="fa fa-github fa-lg"></i>
+    </a>
+  
+    <a href="https://www.linkedin.com/in/nicholas-clark-3a42361a0/" target="_blank">
+        <i class="fa fa-linkedin fa-lg"></i>
+    </a>
+  
+    <a href="mailto:nicholas@californiaclarks.com" target="_blank">
+        <i class="fa fa-envelope fa-lg"></i>
+    </a>
+  
+    <a href="tel:1-619-392-9983" target="_blank">
+        <i class="fa fa-phone fa-lg"></i>
+    </a>
+  
+</div>
+ </div>
+    
+  
+
+  
+    
+      
+        <div id="experience.html" class="hidden-page right"> <div id="experience-div" class="page-div">
+
+  <div class="centered">
+
+      
+        
+        <div id="Supercomputer Center" class="card active-experience">
+        
+          <div class="header">
+            
+                <a href="https://www.sdsc.edu/" target="_blank">
+                    <img class="header-img" src="https://sciencenode.org/supportedby/logo/sponsor-sdsc-logo.jpg">
+                </a>
+            
+            <h1>Supercomputer Center</h1>
+            <h2>Software Engineering Intern</h2>
+
+            
+          </div>
+          <div class="details">
+            
+              <h3>Responsibilities</h3>
+              <p>Assigned to a three person team, we were challenged with devising a software solution that would alleviate unnecessary bottleneck access to the Gordon Supercomputer network. Located on the campus of the University of California San Diego, delays associated with accessing this resource, limits important investigative research and experimentation from research scientists from around the world.</p>
+            
+            
+              <h3>Learning Outcome</h3>
+              <p>The team approach to resolving issues associated with the Support Ticket Response System, introduced me to the Software Development Life Cycle [SDLC] within an Agile Development environment. In the process of delivering code on a daily basis, I gained valuable insight into Continuous Integration / Continuous Development [CI/CD] as well as the importance of incorporating Unit Testing throughout the process. In addition, I gained invaluable insights into a variety of Machine Learning [ML] modeling as well as their applications. This area of technology is of particular interest as my college studies will continue to explore developments in these areas through classroom discussions and specialized research opportunities.</p>
+            
+          </div>
+        </div>
+      
+        
+        <div id="Eye Physicians Clinic" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="google.com" target="_blank">
+                    <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
+                </a>
+            
+            <h1>Eye Physicians Clinic</h1>
+            <h2>Student Intern</h2>
+
+            
+          </div>
+          <div class="details">
+            
+              <h3>Responsibilities</h3>
+              <p>Provided physician assistance and observations during eye surgical procedures. </p>
+            
+            
+              <h3>Learning Outcome</h3>
+              <p>This experience opened my eyes to the unique intersection between biological science, technology, and human interactions. I was fortunate to witness an end-user's complete confidence and reliability of an automated surgical piece of equipment during surgical procedures. On each occasion, my eyes opened wider to the realization of the many people, process and procedures that had to happen to make these experiences successful. Although this opportunity wasn't a hands-on software development experience, it has reassured my understanding that delivering reliable software solutions have consequences and contributes significantly to their overall user experience. </p>
+            
+          </div>
+        </div>
+      
+        
+        <div id="The League Of Amazing Programmers" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="https://www.jointheleague.org/" target="_blank">
+                    <img class="header-img" src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                </a>
+            
+            <h1>The League Of Amazing Programmers</h1>
+            <h2>Student Volunteer</h2>
+
+            
+          </div>
+          <div class="details">
+            
+              <h3>Responsibilities</h3>
+              <p>As a sixth grade student, participating in an after-hours Java programming curriculum with the Wintriss Technical Schools [now known as The League of Amazing Programmers], I excelled to an Oracle Certified Java Programmer level over the course of two years. As a result, I maintained a relationship with the organization as a Volunteer, and was assigned to support local non-profit organizations requiring technical support. Assigned to develop a software Inventory Management solution for the the San Diego Food Alliance, I designed and implemented a web-based food distribution application. The system proved to be critical in matching perishable food items with GIS [graphical information] with distribution centers most in need for those items.      </p>
+            
+            
+              <h3>Learning Outcome</h3>
+              <p>Initially viewed as a cool inventory management system, I quickly realized how delicate and deprived many people are without the support from services like the San Diego Food Alliance. During the implementation of this solution, a Model-View-Controller scheme, Node.JS, Javascript, and CSS were used to build-out an intuitive user interface that was simple to use without the need for extensive training. For managing the back-end inventory storage requirements, a No-SQL MongoDB database was used. In addition to delivering this solution, I continued to provide additional support for an additional year where I performed bug fixes and new feature functionality when required. </p>
+            
+          </div>
+        </div>
+      
+        
+        <div id="Oracle Certified Associate" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="https://www.oracle.com/index.html" target="_blank">
+                    <img class="header-img" src="https://media-exp1.licdn.com/dms/image/C4E0BAQGmS4ZS9i2T6w/company-logo_200_200/0?e=2159024400&v=beta&t=BNlx0YmBG2Yw4ACxLfFTw75FjfgwO2Juak0EwgZcPLc">
+                </a>
+            
+            <h1>Oracle Certified Associate</h1>
+            <h2>Java SE 8 Programmer I</h2>
+
+            
+              <p>Java was the first programming language I learned and I have made plenty of Android apps and Java applets. Seeking out an opportunity to prove my Java programming skills past small projects</p>
+            
+          </div>
+          <div class="details">
+            
+            
+          </div>
+        </div>
+      
+        
+        <div id="PCAP Certified Associate" class="card hidden-experience">
+        
+          <div class="header">
+            
+                <a href="https://pythoninstitute.org/certification/" target="_blank">
+                    <img class="header-img" src="https://pythoninstitute.org/wp-content/uploads/2019/03/expert-1.png">
+                </a>
+            
+            <h1>PCAP Certified Associate</h1>
+            <h2>Python Programming</h2>
+
+            
+              <p>Java was the first programming language I learned and I have made plenty of Android apps and Java applets. Seeking out an opportunity to prove my Java programming skills past small projects</p>
+            
+          </div>
+          <div class="details">
+            
+            
+          </div>
+        </div>
+      
+
+  </div>
+  <pre class="tree">
+    experience/
+    
+      ├─ <button onclick="changeExperience('Supercomputer Center')">Supercomputer Center</button>
+    
+      ├─ <button onclick="changeExperience('Eye Physicians Clinic')">Eye Physicians Clinic</button>
+    
+      ├─ <button onclick="changeExperience('The League Of Amazing Programmers')">The League Of Amazing Programmers</button>
+    
+      ├─ <button onclick="changeExperience('Oracle Certified Associate')">Oracle Certified Associate</button>
+    
+      ├─ <button onclick="changeExperience('PCAP Certified Associate')">PCAP Certified Associate</button>
+    
+  </pre>
+</div>
+
+<script type="text/javascript">
+  function changeExperience(title) {
+    // should only be one element with class 'active-experience'
+    oldExperience = document.getElementsByClassName("active-experience")[0];
+    oldExperience.classList.remove("active-experience");
+    oldExperience.classList.add("hidden-experience");
+
+    newExperience = document.getElementById(title);
+    newExperience.classList.remove("hidden-experience");
+    newExperience.classList.add("active-experience");
+
+  }
+</script>
+ </div>
+      
+    
+  
+
+  
+
+  
+    
+      
+        <div id="projects.html" class="hidden-page right"> <div id="projects-div" class="page-div">
 
   <div class="centered" id="info-box">
 
@@ -191,11 +471,11 @@ div.hidden-page.right {
           <div class="header">
             
                 <a href="https://www.sdsc.edu/" target="_blank">
-                    <img src="https://sciencenode.org/supportedby/logo/sponsor-sdsc-logo.jpg">
+                    <img class="header-img" src="media/barexam.png">
                 </a>
             
             <h1>Bar Exam</h1>
-            <h2>Early 2020</h2>
+            <!-- <h2>Early 2020</h2> -->
           </div>
           <div class="details">
             <h3>Overview</h3>
@@ -212,12 +492,12 @@ div.hidden-page.right {
         
           <div class="header">
             
-                <a href="google.com" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
+                <a href="https://docs.google.com/document/d/1LoPJliyPfm_lQoKM8FG06eVhE96dpcwSNMgfkI9diWg/edit?usp=sharing" target="_blank">
+                    <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
                 </a>
             
             <h1>Binary Counter</h1>
-            <h2>Test2</h2>
+            <!-- <h2>Test2</h2> -->
           </div>
           <div class="details">
             <h3>Overview</h3>
@@ -235,11 +515,11 @@ div.hidden-page.right {
           <div class="header">
             
                 <a href="https://www.jointheleague.org/" target="_blank">
-                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                    <img class="header-img" src="media/genetic.png">
                 </a>
             
             <h1>Genetic Learning Library</h1>
-            <h2>Test3</h2>
+            <!-- <h2>Test3</h2> -->
           </div>
           <div class="details">
             <h3>Overview</h3>
@@ -257,11 +537,11 @@ div.hidden-page.right {
           <div class="header">
             
                 <a href="https://www.jointheleague.org/" target="_blank">
-                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
+                    <img class="header-img" src="media/cnc.png">
                 </a>
             
             <h1>CNC Milling Machine</h1>
-            <h2>Test4</h2>
+            <!-- <h2>Test4</h2> -->
           </div>
           <div class="details">
             <h3>Overview</h3>
@@ -276,15 +556,15 @@ div.hidden-page.right {
 
   </div>
   <pre class="tree">
-    projects
+    projects/
     
-      +-- <button onclick="changeProject('Bar Exam')">Bar Exam</button>
+      ├─ <button onclick="changeProject('Bar Exam')">Bar Exam</button>
     
-      +-- <button onclick="changeProject('Binary Counter')">Binary Counter</button>
+      ├─ <button onclick="changeProject('Binary Counter')">Binary Counter</button>
     
-      +-- <button onclick="changeProject('Genetic Learning Library')">Genetic Learning Library</button>
+      ├─ <button onclick="changeProject('Genetic Learning Library')">Genetic Learning Library</button>
     
-      +-- <button onclick="changeProject('CNC Milling Machine')">CNC Milling Machine</button>
+      ├─ <button onclick="changeProject('CNC Milling Machine')">CNC Milling Machine</button>
     
   </pre>
 </div>
@@ -310,150 +590,47 @@ div.hidden-page.right {
   
     
       
-      <div id="about.html" class="active-page"> <div id="about-div" class="page-div centered">
+        <div id="contact.html" class="hidden-page right"> <div id="contact-div" class="page-div centered">
 
-    <div id="about-box">
+    <div id="contact-card">
       <div class="header">
-        <a target="_blank">
-          <img src="media/me.jpg" />
-        </a>
-        <h1>Nicholas Clark</h1>
-        <p>With my feet firmly planted on solid ground, my imagination continuously points towards the stars. As a Computer Science major at Carnegie Mellon University, I've committed myself to developing strong software fundamentals while challenging my imagination to look beyond what lies before me. I consider myself an ideal candidate for a Software Engineering Internship opportunity. I have a unique balance of strong academic skills, practical work experiences, and various software projects that support my continued upward trajectory towards a rewarding career in the science and technology industry.
+        <h1>Contact Information</h1>
+        <p>Academics consume a great part of my days. However I make a concerted effort to respond to all correspondance in a timely manner.
 </p>
+      </div>
+      <div id="social-list">
+        
+          <a class="contact" href="http://github.com/najclark" target="_blank">
+              <i class="fa fa-github fa-lg"></i>
+              Github
+          </a>
+        
+          <a class="contact" href="https://www.linkedin.com/in/nicholas-clark-3a42361a0/" target="_blank">
+              <i class="fa fa-linkedin fa-lg"></i>
+              LinkedIn
+          </a>
+        
+          <a class="contact" href="mailto:nicholas@californiaclarks.com" target="_blank">
+              <i class="fa fa-envelope fa-lg"></i>
+              nicholas@californiaclarks.com
+          </a>
+        
+          <a class="contact" href="tel:1-619-392-9983" target="_blank">
+              <i class="fa fa-phone fa-lg"></i>
+              (619)-392-9983
+          </a>
+        
       </div>
     </div>
 
 </div>
-
-<div id="social-box">
-  
-    <a href="http://github.com/najclark" target="_blank">
-        <i class="fa fa-github fa-lg"></i>
-    </a>
-  
-    <a href="https://www.linkedin.com/in/nicholas-clark-3a42361a0/" target="_blank">
-        <i class="fa fa-linkedin fa-lg"></i>
-    </a>
-  
-    <a href="mailto:nicholas@californiaclarks.com" target="_blank">
-        <i class="fa fa-envelope fa-lg"></i>
-    </a>
-  
-</div>
- </div>
-    
-  
-
-  
-    
-      
-        <div id="experience.html" class="hidden-page right"> <div id="experience-div" class="page-div">
-
-  <div class="centered" id="info-box">
-
-      
-        
-        <div id="SD Supercomputer Center" class="card active-experience">
-        
-          <div class="header">
-            
-                <a href="https://www.sdsc.edu/" target="_blank">
-                    <img src="https://sciencenode.org/supportedby/logo/sponsor-sdsc-logo.jpg">
-                </a>
-            
-            <h1>SD Supercomputer Center</h1>
-            <h2>Intern</h2>
-          </div>
-          <div class="details">
-            <h3>Responsibilities</h3>
-            <p>Assigned to a three person team, we were challenged with devising a software solution that would alleviate unnecessary bottleneck access to the Gordon Supercomputer network. Located on the campus of the University of California San Diego, delays associated with accessing this resource, limits important investigative research and experimentation from research scientists from around the world.</p>
-            <h3>Learning Outcome</h3>
-            <p>The team approach to resolving issues associated with the Support Ticket Response System, introduced me to the Software Development Life Cycle [SDLC] within an Agile Development environment. In the process of delivering code on a daily basis, I gained valuable insight into Continuous Integration / Continuous Development [CI/CD] as well as the importance of incorporating Unit Testing throughout the process. In addition, I gained invaluable insights into a variety of Machine Learning [ML] modeling as well as their applications. This area of technology is of particular interest as my college studies will continue to explore developments in these areas through classroom discussions and specialized research opportunities.</p>
-          </div>
-        </div>
-      
-        
-        <div id="Eye Physicians Clinic" class="card hidden-experience">
-        
-          <div class="header">
-            
-                <a href="google.com" target="_blank">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
-                </a>
-            
-            <h1>Eye Physicians Clinic</h1>
-            <h2>Intern</h2>
-          </div>
-          <div class="details">
-            <h3>Responsibilities</h3>
-            <p>Provided physician assistance and observations during eye surgical procedures. </p>
-            <h3>Learning Outcome</h3>
-            <p>This experience opened my eyes to the unique intersection between biological science, technology, and human interactions. I was fortunate to witness an end-user's complete confidence and reliability of an automated surgical piece of equipment during surgical procedures. On each occasion, my eyes opened wider to the realization of the many people, process and procedures that had to happen to make these experiences successful. Although this opportunity wasn't a hands-on software development experience, it has reassured my understanding that delivering reliable software solutions have consequences and contributes significantly to their overall user experience. </p>
-          </div>
-        </div>
-      
-        
-        <div id="The League Of Amazing Programmers" class="card hidden-experience">
-        
-          <div class="header">
-            
-                <a href="https://www.jointheleague.org/" target="_blank">
-                    <img src="https://cdn.greatnonprofits.org/images/logos/LeagueLogoFFINAL2.jpg">
-                </a>
-            
-            <h1>The League Of Amazing Programmers</h1>
-            <h2>Volunteer</h2>
-          </div>
-          <div class="details">
-            <h3>Responsibilities</h3>
-            <p>As a sixth grade student, participating in an after-hours Java programming curriculum with the Wintriss Technical Schools [now known as The League of Amazing Programmers], I excelled to an Oracle Certified Java Programmer level over the course of two years. As a result, I maintained a relationship with the organization as a Volunteer, and was assigned to support local non-profit organizations requiring technical support. Assigned to develop a software Inventory Management solution for the the San Diego Food Alliance, I designed and implemented a web-based food distribution application. The system proved to be critical in matching perishable food items with GIS [graphical information] with distribution centers most in need for those items.      </p>
-            <h3>Learning Outcome</h3>
-            <p>Initially viewed as a cool inventory management system, I quickly realized how delicate and deprived many people are without the support from services like the San Diego Food Alliance. During the implementation of this solution, a Model-View-Controller scheme, Node.JS, Javascript, and CSS were used to build-out an intuitive user interface that was simple to use without the need for extensive training. For managing the back-end inventory storage requirements, a No-SQL MongoDB database was used. In addition to delivering this solution, I continued to provide additional support for an additional year where I performed bug fixes and new feature functionality when required. </p>
-          </div>
-        </div>
-      
-
-  </div>
-  <pre class="tree">
-    experience
-    
-      +-- <button onclick="changeExperience('SD Supercomputer Center')">SD Supercomputer Center</button>
-    
-      +-- <button onclick="changeExperience('Eye Physicians Clinic')">Eye Physicians Clinic</button>
-    
-      +-- <button onclick="changeExperience('The League Of Amazing Programmers')">The League Of Amazing Programmers</button>
-    
-  </pre>
-</div>
-
-<script type="text/javascript">
-  function changeExperience(title) {
-    // should only be one element with class 'active-experience'
-    oldExperience = document.getElementsByClassName("active-experience")[0];
-    oldExperience.classList.remove("active-experience");
-    oldExperience.classList.add("hidden-experience");
-
-    newExperience = document.getElementById(title);
-    newExperience.classList.remove("hidden-experience");
-    newExperience.classList.add("active-experience");
-
-  }
-</script>
  </div>
       
     
-  
-
   
 
 
 <div class="navbar">
-  
-    
-      <button id="projects.html-btn" class="nav-item" onclick="changePage('projects.html')">
-    
-      Projects
-    </button>
   
     
       <button id="about.html-btn" class="nav-item active-btn" onclick="changePage('about.html')">
@@ -471,6 +648,18 @@ div.hidden-page.right {
       <button id="Resume-btn" class="nav-item" onclick="window.open('https://drive.google.com/file/d/1ViQSammYoddoYGyRgqM3nF2fR6w3HdvV/view?usp=sharing','_blank','resizable=yes')">
     
       Resume
+    </button>
+  
+    
+      <button id="projects.html-btn" class="nav-item" onclick="changePage('projects.html')">
+    
+      Projects
+    </button>
+  
+    
+      <button id="contact.html-btn" class="nav-item" onclick="changePage('contact.html')">
+    
+      Contact Me
     </button>
   
 </div>
@@ -498,5 +687,23 @@ div.hidden-page.right {
 </script>
 
 
+      <!-- <video id="background" poster="media/poster.png" autoplay muted loop>
+        <source scr="media/video.mp4" type="video/mp4">
+      </video> -->
+      <video id="background"
+      	loop
+      	muted
+      	autoplay
+      	preload="auto"
+      	poster="media/poster.png">
+      <source src="media/clouds.mp4" type="video/mp4">
+      </video>
+      <script type="text/javascript">
+        var vid = document.getElementById("background");
+        vid.playbackRate = 0.1;
+      </script>
+      <!-- <video id="background" poster="media/poster.png" autoplay muted loop>
+        <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" />
+      </video> -->
     </body>
 </html>

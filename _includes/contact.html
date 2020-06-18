@@ -1,0 +1,18 @@
+<div id="contact-div" class="page-div centered">
+
+    <div id="contact-card">
+      <div class="header">
+        <h1>Contact Information</h1>
+        <p>{{ site.contact-msg }}</p>
+      </div>
+      <div id="social-list">
+        {% for item in site.data.social %}
+          <a class="contact" href="{{ item.href }}" target="_blank">
+              <i class="fa fa-{{ item.icon }} fa-lg"></i>
+              {{ item.text }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+</div>

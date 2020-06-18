@@ -11,11 +11,11 @@
           <div class="header">
             {% if item.img.size > 0 %}
                 <a href="{{ item.href }}" target="_blank">
-                    <img src="{{ item.img }}">
+                    <img class="header-img" src="{{ item.img }}">
                 </a>
             {% endif %}
             <h1>{{ item.name }}</h1>
-            <h2>{{ item.date }}</h2>
+            <!-- <h2>{{ item.date }}</h2> -->
           </div>
           <div class="details">
             <h3>Overview</h3>
@@ -30,9 +30,9 @@
 
   </div>
   <pre class="tree">
-    projects
+    projects/
     {% for item in site.data.projects %}
-      +-- <button onclick="changeProject('{{ item.name }}')">{{ item.name }}</button>
+      ├─ <button onclick="changeProject('{{ item.name }}')">{{ item.name }}</button>
     {% endfor %}
   </pre>
 </div>
