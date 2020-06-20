@@ -1,52 +1,34 @@
-<div class="slides">
-{% assign left = true %}
-{% for slide in site.data.navbar %}
-  {% if slide.link == false %}
-    {% if forloop.first %}
-      {% assign left = false %}
-      <div id="{{ slide.file }}" class="active-page"> {% include {{ slide.file }} %} </div>
-    {% else %}
-      {% if left %}
-        <div id="{{ slide.file }}" class="hidden-page left"> {% include {{ slide.file }} %} </div>
-      {% else %}
-        <div id="{{ slide.file }}" class="hidden-page right"> {% include {{ slide.file }} %} </div>
-      {% endif %}
+<div id="track">
+  {% for slide in site.data.navbar %}
+    {% if slide.link == false %}
+      <div id="{{ slide.file }}" class="slide"> {% include {{ slide.file }} %} </div>
     {% endif %}
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+</div>
 
 <div class="navbar">
   {% for slide in site.data.navbar %}
     {% if slide.link %}
       <button id="{{ slide.name }}-btn" class="nav-item" onclick="window.open('https://drive.google.com/file/d/1ViQSammYoddoYGyRgqM3nF2fR6w3HdvV/view?usp=sharing','_blank','resizable=yes')">
     {% elsif forloop.first %}
-      <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="changePage('{{ slide.file }}')">
+      <button id="{{ slide.file }}-btn" class="nav-item active-btn" onclick="slideTo('{{ slide.file }}')">
     {% else %}
-      <button id="{{ slide.file }}-btn" class="nav-item" onclick="changePage('{{ slide.file }}')">
+      <button id="{{ slide.file }}-btn" class="nav-item" onclick="slideTo('{{ slide.file }}')">
     {% endif %}
       {{ slide.name }}
     </button>
   {% endfor %}
 </div>
-</div>
 
 <script type="text/javascript">
-  function changePage(newPage) {
-    // should only be one element with class 'active-page'
-    old_page = document.getElementsByClassName("active-page")[0];
-    old_page.classList.remove("active-page");
-    old_page.classList.add("hidden-page");
+  function slideTo(newPageId) {
+    let newPage = document.getElementById(newPageId);
+    newPage.scrollIntoView({behavior: 'smooth'});
 
-    new_page = document.getElementById(newPage);
-    new_page.classList.remove("hidden-page");
-    new_page.classList.add("active-page");
-    // new_page.classList.add("left");
+    let oldBtn = document.getElementsByClassName("active-btn")[0];
+    oldBtn.classList.remove("active-btn");
 
-    old_btn = document.getElementsByClassName("active-btn")[0];
-    old_btn.classList.remove("active-btn");
-
-    new_btn = document.getElementById(newPage.concat("-btn"));
-    new_btn.classList.add("active-btn");
-
+    let newBtn = document.getElementById(newPageId.concat("-btn"));
+    newBtn.classList.add("active-btn");
   }
 </script>

@@ -1,47 +1,44 @@
-<div id="experience-div" class="page-div">
+<div class="center-children">
 
-  <div class="centered">
-
-      {% for item in site.data.experience %}
-        {% if forloop.first %}
-        <div id="{{ item.title }}" class="card active-experience">
-        {% else %}
-        <div id="{{ item.title }}" class="card hidden-experience">
-        {% endif %}
-          <div class="header">
-            {% if item.img.size > 0 %}
-                <a href="{{ item.href }}" target="_blank">
-                    <img class="header-img" src="{{ item.img }}">
-                </a>
-            {% endif %}
-            <h1>{{ item.title }}</h1>
-            <h2>{{ item.position }}</h2>
-
-            {% if item.info %}
-              <p>{{ item.info }}</p>
-            {% endif %}
-          </div>
-          <div class="details">
-            {% if item.responsibilities %}
-              <h3>Responsibilities</h3>
-              <p>{{ item.responsibilities }}</p>
-            {% endif %}
-            {% if item.learning %}
-              <h3>Learning Outcome</h3>
-              <p>{{ item.learning }}</p>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-
-  </div>
-  <pre class="tree">
-    experience/
     {% for item in site.data.experience %}
-      ├─ <button onclick="changeExperience('{{ item.title }}')">{{ item.title }}</button>
+      {% if forloop.first %}
+      <div id="{{ item.title }}" class="card active-experience">
+      {% else %}
+      <div id="{{ item.title }}" class="card hidden-experience">
+      {% endif %}
+        <div class="header">
+          {% if item.img.size > 0 %}
+              <a href="{{ item.href }}" target="_blank">
+                  <img class="header-img" src="{{ item.img }}">
+              </a>
+          {% endif %}
+          <h1>{{ item.title }}</h1>
+          <h2>{{ item.position }}</h2>
+
+          {% if item.info %}
+            <p>{{ item.info }}</p>
+          {% endif %}
+        </div>
+        <div class="details">
+          {% if item.responsibilities %}
+            <h3>Responsibilities</h3>
+            <p>{{ item.responsibilities }}</p>
+          {% endif %}
+          {% if item.learning %}
+            <h3>Learning Outcome</h3>
+            <p>{{ item.learning }}</p>
+          {% endif %}
+        </div>
+      </div>
     {% endfor %}
-  </pre>
+
 </div>
+<pre class="tree">
+  experience/
+  {% for item in site.data.experience %}
+    ├─ <button onclick="changeExperience('{{ item.title }}')">{{ item.title }}</button>
+  {% endfor %}
+</pre>
 
 <script type="text/javascript">
   function changeExperience(title) {
