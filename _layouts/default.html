@@ -8,17 +8,9 @@
     <body>
       {% include navbar.html %}
 
-      <video id="background"
-      	loop
-      	muted
-      	autoplay
-      	preload="auto"
-      	poster="media/poster.png">
-      <source src="media/clouds.mp4" type="video/mp4">
-      </video>
-      <script type="text/javascript">
-        var vid = document.getElementById("background");
-        vid.playbackRate = 0.1;
-      </script>
+      <script src="/background.js" defer></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+
     </body>
 </html>

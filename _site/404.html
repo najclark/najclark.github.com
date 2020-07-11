@@ -12,6 +12,41 @@ html, body {
   margin: 0;
 }
 
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+button.prev, button.next {
+  display: flex; font-size: 32px;
+  align-items: center; justify-content: center;
+  color: #FFF; background-color: #333;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+}
+
+#carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#carousel > * {
+  margin: 0;
+}
+
 .center-children {
   display: flex;
   flex-direction: column;
@@ -99,7 +134,7 @@ html, body {
 
 .header-img {
   float: left;
-  margin-right: 0.75em;
+  margin: 0;
   max-width: 200px;
   max-height: 200px;
   border-radius: 0.5em;
@@ -460,15 +495,50 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
       
       <div id="Bar Exam" class="card active-project">
       
+
         <div class="header">
           
-              <a href="https://www.sdsc.edu/" target="_blank">
-                  <img class="header-img" src="media/barexam.png">
-              </a>
+            <div id="carousel">
+              <button class="prev" onclick="slide('/media/barexam/-carousel', -1)">&lt;</button>
+              <ul id="/media/barexam/-carousel" showing=0>
+                
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/barexam/barexam.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/barexam/cnc.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+              <button class="next" onclick="slide('/media/barexam/-carousel', +1)">&gt;</button>
+            </div>
           
-          <h1>Bar Exam</h1>
+
+          <a href="https://www.sdsc.edu/" target="_blank">
+            <h1>Bar Exam</h1>
+          </a>
           <!-- <h2>Early 2020</h2> -->
         </div>
+
         <div class="details">
           <h3>Overview</h3>
           <p>Designed as an entertainment application that challenges a user's ability to match musical lyrics with its original artist before time expires. The current state of the application allows the user to enter game mode and match lyrical selections from previously populated data models. In addition, the user has an option to contribute to the lyrical repository by imputing lyrics of their choosing. Results of the game are recorded and posted whenever the user fails to correctly match an artist with their lyrics. </p>
@@ -478,19 +548,47 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
           <p>To Do...write info on some of the things or experiences that were developed / learned as a result of creating the project. You can also list some of the difficult challenges that you had to overcome to make it happen. You can also list some of the proposed enhancements that could further enhance the project.</p>
         </div>
       </div>
+
     
       
       <div id="Binary Counter" class="card hidden-project">
       
+
         <div class="header">
           
-              <a href="https://docs.google.com/document/d/1LoPJliyPfm_lQoKM8FG06eVhE96dpcwSNMgfkI9diWg/edit?usp=sharing" target="_blank">
-                  <img class="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU">
-              </a>
+            <div id="carousel">
+              <button class="prev" onclick="slide('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel', -1)">&lt;</button>
+              <ul id="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel" showing=0>
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+              <button class="next" onclick="slide('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel', +1)">&gt;</button>
+            </div>
           
-          <h1>Binary Counter</h1>
+
+          <a href="https://docs.google.com/document/d/1LoPJliyPfm_lQoKM8FG06eVhE96dpcwSNMgfkI9diWg/edit?usp=sharing" target="_blank">
+            <h1>Binary Counter</h1>
+          </a>
           <!-- <h2>Test2</h2> -->
         </div>
+
         <div class="details">
           <h3>Overview</h3>
           <p>In an effort to assist an AP Computer Science instructor in communicating the binary counting system, I manufactured a tool that counted and projected a visual representation. The system permitted a user to view a decimal value [0-255] with their corresponding binary representation in both an automatic and manual mode. The overall user experience was simple, straight-forward and required little explanation. The device positively contributed to the learning experience of the students and greatly improved letter grades within the next exam cycle. Proving that the work I do can make a difference. </p>
@@ -500,19 +598,51 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
           <p>To Do…</p>
         </div>
       </div>
+
     
       
       <div id="Genetic Learning Library" class="card hidden-project">
       
+
         <div class="header">
           
-              <a href="https://www.jointheleague.org/" target="_blank">
-                  <img class="header-img" src="media/genetic.png">
-              </a>
+            <div id="carousel">
+              <button class="prev" onclick="slide('media/genetic.png-carousel', -1)">&lt;</button>
+              <ul id="media/genetic.png-carousel" showing=0>
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/genetic.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+              <button class="next" onclick="slide('media/genetic.png-carousel', +1)">&gt;</button>
+            </div>
           
-          <h1>Genetic Learning Library</h1>
+
+          <a href="https://www.jointheleague.org/" target="_blank">
+            <h1>Genetic Learning Library</h1>
+          </a>
           <!-- <h2>Test3</h2> -->
         </div>
+
         <div class="details">
           <h3>Overview</h3>
           <p>To Do…</p>
@@ -522,19 +652,51 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
           <p>To Do…</p>
         </div>
       </div>
+
     
       
       <div id="CNC Milling Machine" class="card hidden-project">
       
+
         <div class="header">
           
-              <a href="https://www.jointheleague.org/" target="_blank">
-                  <img class="header-img" src="media/cnc.png">
-              </a>
+            <div id="carousel">
+              <button class="prev" onclick="slide('media/cnc.png-carousel', -1)">&lt;</button>
+              <ul id="media/cnc.png-carousel" showing=0>
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/cnc.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+              <button class="next" onclick="slide('media/cnc.png-carousel', +1)">&gt;</button>
+            </div>
           
-          <h1>CNC Milling Machine</h1>
+
+          <a href="https://www.jointheleague.org/" target="_blank">
+            <h1>CNC Milling Machine</h1>
+          </a>
           <!-- <h2>Test4</h2> -->
         </div>
+
         <div class="details">
           <h3>Overview</h3>
           <p>To provide my high school's Innovation laboratory with the ability to fabricate machined parts for education and faculty usage. I led a five member team charged with designing, building and implementing a solution capable of milling medium-density metal materials as large as 2FT x 2FT x 2FT. </p>
@@ -544,6 +706,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
           <p>To Do…</p>
         </div>
       </div>
+
     
 </div>
 
@@ -571,6 +734,14 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
     newProject.classList.remove("hidden-project");
     newProject.classList.add("active-project");
 
+  }
+
+  function slide(carouselId, delta) {
+    var carousel = document.getElementById(carouselId);
+    var slides = carousel.querySelectorAll('li');
+    let newShowing = parseInt(carousel.getAttribute("showing")) + delta;
+    newShowing = Math.min(Math.max(newShowing,0), slides.length-1);
+    slides[newShowing].scrollIntoView({behavior: 'smooth'});
   }
 </script>
  </div>
@@ -664,17 +835,9 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
 </script>
 
 
-      <video id="background"
-      	loop
-      	muted
-      	autoplay
-      	preload="auto"
-      	poster="media/poster.png">
-      <source src="media/clouds.mp4" type="video/mp4">
-      </video>
-      <script type="text/javascript">
-        var vid = document.getElementById("background");
-        vid.playbackRate = 0.1;
-      </script>
+      <script src="/background.js" defer></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+
     </body>
 </html>

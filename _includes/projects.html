@@ -6,15 +6,30 @@
       {% else %}
       <div id="{{ item.name }}" class="card hidden-project">
       {% endif %}
+
         <div class="header">
-          {% if item.img.size > 0 %}
-              <a href="{{ item.href }}" target="_blank">
-                  <img class="header-img" src="{{ item.img }}">
-              </a>
+          {% if item.images_dir.size > 0 %}
+            <div id="carousel">
+              <button class="prev" onclick="slide('{{ item.images_dir }}-carousel', -1)">&lt;</button>
+              <ul id="{{ item.images_dir }}-carousel" showing=0>
+                {% for image in site.static_files %}
+                  {% if image.path contains item.images_dir %}
+                    <li>
+                      <img class="header-img" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              <button class="next" onclick="slide('{{ item.images_dir }}-carousel', +1)">&gt;</button>
+            </div>
           {% endif %}
-          <h1>{{ item.name }}</h1>
+
+          <a href="{{ item.href }}" target="_blank">
+            <h1>{{ item.name }}</h1>
+          </a>
           <!-- <h2>{{ item.date }}</h2> -->
         </div>
+
         <div class="details">
           <h3>Overview</h3>
           <p>{{ item.overview }}</p>
@@ -24,6 +39,7 @@
           <p>{{ item.learning }}</p>
         </div>
       </div>
+
     {% endfor %}
 </div>
 
@@ -45,5 +61,13 @@
     newProject.classList.remove("hidden-project");
     newProject.classList.add("active-project");
 
+  }
+
+  function slide(carouselId, delta) {
+    var carousel = document.getElementById(carouselId);
+    var slides = carousel.querySelectorAll('li');
+    let newShowing = parseInt(carousel.getAttribute("showing")) + delta;
+    newShowing = Math.min(Math.max(newShowing,0), slides.length-1);
+    slides[newShowing].scrollIntoView({behavior: 'smooth'});
   }
 </script>
