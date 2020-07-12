@@ -8,12 +8,12 @@
       {% endif %}
 
         <div class="header">
-          {% if item.images_dir.size > 0 %}
+          {% if item.imgs.size > 0 %}
             <div id="carousel">
               <button class="prev" onclick="slide('{{ item.images_dir }}-carousel', -1)">&lt;</button>
               <ul id="{{ item.images_dir }}-carousel" showing=0>
                 {% for image in site.static_files %}
-                  {% if image.path contains item.images_dir %}
+                  {% if image.path contains item.imgs %}
                     <li>
                       <img class="header-img" src="{{ site.baseurl }}{{ image.path }}" alt="image" />
                     </li>
@@ -35,8 +35,6 @@
           <p>{{ item.overview }}</p>
           <h3>Background</h3>
           <p>{{ item.background }}</p>
-          <h3>Learning Outcome</h3>
-          <p>{{ item.learning }}</p>
         </div>
       </div>
 

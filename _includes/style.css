@@ -43,6 +43,16 @@ button.prev, button.next {
   margin: 0;
 }
 
+#carousel > ul > li > img {
+  margin: 0;
+}
+
+#carousel > button {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .center-children {
   display: flex;
   flex-direction: column;
@@ -131,6 +141,7 @@ button.prev, button.next {
 .header-img {
   float: left;
   margin: 0;
+  margin-right: 10px;
   max-width: 200px;
   max-height: 200px;
   border-radius: 0.5em;
@@ -214,7 +225,8 @@ button.prev, button.next {
   overflow: auto;
   border-radius: 0.5em;
   background-color: white;
-  color: #666;
+  color: #2C2B2B;
+  opacity: 70%;
   margin-bottom: 1.5em;
   width: 60%;
 }

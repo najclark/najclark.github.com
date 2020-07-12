@@ -47,6 +47,16 @@ button.prev, button.next {
   margin: 0;
 }
 
+#carousel > ul > li > img {
+  margin: 0;
+}
+
+#carousel > button {
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .center-children {
   display: flex;
   flex-direction: column;
@@ -135,6 +145,7 @@ button.prev, button.next {
 .header-img {
   float: left;
   margin: 0;
+  margin-right: 10px;
   max-width: 200px;
   max-height: 200px;
   border-radius: 0.5em;
@@ -218,7 +229,8 @@ button.prev, button.next {
   overflow: auto;
   border-radius: 0.5em;
   background-color: white;
-  color: #666;
+  color: #2C2B2B;
+  opacity: 70%;
   margin-bottom: 1.5em;
   width: 60%;
 }
@@ -294,11 +306,11 @@ button.prev, button.next {
         <img class="header-img" src="media/me.jpg" />
         <h1>Nicholas Clark</h1>
         <h2>Carnegie Mellon University School of Computer Science</h2>
-        <pre id="intro">I’m a Carnegie Mellon University School of Computer Science student, who’s developed an unwavering passion for science and technology long before I stepped on campus. Throughout grade-school I competed in a variety of local and regionally recognized robotic and cyber security opportunities. While developing strong technical skills was a byproduct of my involvement, I also grew as an individual, with strong interpersonal skills, and a passion for working with others to solve challenging problems.
+        <pre id="intro">I’m  an enthusiastic Computer Science student with an unwavering passion for science and technology. A self-motivated individual, with strong interpersonal skills along with theoretical and hands-on experiences that qualify me as a valuable asset in a Software Engineering Internship role. I have a tremendous work ethic, evidenced by my unique balance between rigorous academic studies, previous work experiences, hackathon competitions, and personal projects developed over the course of many years.
 
-My high school years were a discovery period in which I began to explore the cross-sections of classroom theory and practical applications to solving real problems. Through after-school programs and college courses, I developed proficiencies in programming languages and began sharing my software skills with non-profit organizations serving my community.
+Leveraging my problem-solving abilities, utilizing proficiencies in a variety of programming languages including Java, C, Python and others, I’ve successfully collaborated in developing various software solutions for both small and large organizations.
 
-As a college student, I’m incredibly grateful to be a part of the Carnegie Mellon University School of Computer Science. The education, community, and opportunities available continue to serve my never-ending-thirst to continue growing towards a career in computer science. The culmination of my varied experiences have contributed towards establishing my voice and the person I’ve become, and as our campus mantra goes, “My Heart Is in the Work”.
+I’m committed to adding value to visionary organizations that share a commitment in developing future technologists while valuing their unique contributions to organizational objectives.
 </pre>
       </div>
     </div>
@@ -499,8 +511,8 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('/media/barexam/-carousel', -1)">&lt;</button>
-              <ul id="/media/barexam/-carousel" showing=0>
+              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
+              <ul id="-carousel" showing=0>
                 
                   
                 
@@ -529,23 +541,21 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                   
                 
               </ul>
-              <button class="next" onclick="slide('/media/barexam/-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
             </div>
           
 
           <a href="https://www.sdsc.edu/" target="_blank">
             <h1>Bar Exam</h1>
           </a>
-          <!-- <h2>Early 2020</h2> -->
+          <!-- <h2>Test</h2> -->
         </div>
 
         <div class="details">
           <h3>Overview</h3>
-          <p>Designed as an entertainment application that challenges a user's ability to match musical lyrics with its original artist before time expires. The current state of the application allows the user to enter game mode and match lyrical selections from previously populated data models. In addition, the user has an option to contribute to the lyrical repository by imputing lyrics of their choosing. Results of the game are recorded and posted whenever the user fails to correctly match an artist with their lyrics. </p>
+          <p>Designed as an entertainment application, this program challenges a user's ability to match musical lyrics with its original artist before time expires. The current state of the application allows the user to enter game mode and match lyrical selections from previously populated data models. In addition, the user has an option to contribute to the lyrical repository by imputing lyrics of their choosing. Results of the game are recorded and posted whenever the user fails to correctly match an artist with their lyrics. </p>
           <h3>Background</h3>
-          <p>Project was developed to enhance my full stack experience using React.JS, JavaScript, CSS, MySQL database and API integration; as well as providing an entertaining experience to a user.</p>
-          <h3>Learning Outcome</h3>
-          <p>To Do...write info on some of the things or experiences that were developed / learned as a result of creating the project. You can also list some of the difficult challenges that you had to overcome to make it happen. You can also list some of the proposed enhancements that could further enhance the project.</p>
+          <p>This project was developed to enhance my full-stack experiences using React.JS, JavaScript, CSS, MySQL database, API integration, as well as providing a fun and entertaining experience to a user.</p>
         </div>
       </div>
 
@@ -557,8 +567,8 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel', -1)">&lt;</button>
-              <ul id="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel" showing=0>
+              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
+              <ul id="-carousel" showing=0>
                 
                   
                 
@@ -568,6 +578,10 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                 
                   
                 
+                  
+                    <li>
+                      <img class="header-img" src="/media/binary/schematic.png" alt="image" />
+                    </li>
                   
                 
                   
@@ -579,7 +593,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                   
                 
               </ul>
-              <button class="next" onclick="slide('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeWKeUO9pXyB7jBTxbaJqgZ1eIOao6iX4dz10f7RqKOMZxiQc5&usqp=CAU-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -593,9 +607,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
           <h3>Overview</h3>
           <p>In an effort to assist an AP Computer Science instructor in communicating the binary counting system, I manufactured a tool that counted and projected a visual representation. The system permitted a user to view a decimal value [0-255] with their corresponding binary representation in both an automatic and manual mode. The overall user experience was simple, straight-forward and required little explanation. The device positively contributed to the learning experience of the students and greatly improved letter grades within the next exam cycle. Proving that the work I do can make a difference. </p>
           <h3>Background</h3>
-          <p>This was an electro-mechanical device that utilized an Raspberry Pi micro-controller to process and display data. The electrical components consisted of a Shift Register circuit, 7-Segment Display, LED's [Light Emitting Diodes] and a battery power source. A wiring-harness and plexi-glass fixture were machined to provide a seamless integration and enhance the user's experience.</p>
-          <h3>Learning Outcome</h3>
-          <p>To Do…</p>
+          <p>The Binary Counter allowed me to expand upon my experience of developing software code for embedded devices. The system was an electro-mechanical device that utilized a Raspberry Pi micro-controller to process and display data. The electrical components consisted of a Shift Register circuit, 7-Segment Display, LED's [Light Emitting Diodes] and a battery power source. A wiring-harness and plexi-glass fixture were machined to provide a seamless integration and enhance the user's experience.</p>
         </div>
       </div>
 
@@ -607,8 +619,10 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('media/genetic.png-carousel', -1)">&lt;</button>
-              <ul id="media/genetic.png-carousel" showing=0>
+              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
+              <ul id="-carousel" showing=0>
+                
+                  
                 
                   
                 
@@ -622,7 +636,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                 
                   
                     <li>
-                      <img class="header-img" src="/media/genetic.png" alt="image" />
+                      <img class="header-img" src="/media/genetic/genetic.png" alt="image" />
                     </li>
                   
                 
@@ -630,10 +644,8 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                 
                   
                 
-                  
-                
               </ul>
-              <button class="next" onclick="slide('media/genetic.png-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -645,11 +657,9 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
 
         <div class="details">
           <h3>Overview</h3>
-          <p>To Do…</p>
+          <p>The Genetic Learning Library was initially created in an attempt to better understand how a Neural Network by creating networks from scratch. Without the understanding of calculus at the time, I needed a different way to train each network that wouldn’t rely on calculus-heavy algorithms like Backpropagation. The solution I used was a Genetic Algorithm, which allows the Neural Networks to evolve generation by generation in a similar fashion to the way humans evolved over millions of years.</p>
           <h3>Background</h3>
-          <p>To Do…</p>
-          <h3>Learning Outcome</h3>
-          <p>To Do…</p>
+          <p>The final solution featured an abstracted Object-Oriented design, allowing for Genetic Algorithm to not only train Neural Networks, but also perform other varius Hill Climbing [Optimization] Machine Learning tasks. The library has been used in some of my smaller scale projects including an Algorithmic Stock Trader, and a Hill Climbing Picture Recreator. </p>
         </div>
       </div>
 
@@ -661,8 +671,10 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('media/cnc.png-carousel', -1)">&lt;</button>
-              <ul id="media/cnc.png-carousel" showing=0>
+              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
+              <ul id="-carousel" showing=0>
+                
+                  
                 
                   
                 
@@ -674,7 +686,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                 
                   
                     <li>
-                      <img class="header-img" src="/media/cnc.png" alt="image" />
+                      <img class="header-img" src="/media/cnc/cnc.png" alt="image" />
                     </li>
                   
                 
@@ -684,10 +696,8 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
                 
                   
                 
-                  
-                
               </ul>
-              <button class="next" onclick="slide('media/cnc.png-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -699,11 +709,9 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
 
         <div class="details">
           <h3>Overview</h3>
-          <p>To provide my high school's Innovation laboratory with the ability to fabricate machined parts for education and faculty usage. I led a five member team charged with designing, building and implementing a solution capable of milling medium-density metal materials as large as 2FT x 2FT x 2FT. </p>
+          <p>Invited by my school’s Innovation Laboratory, I was asked to lead a group of students through the design and development of a CNC Milling machine, to be used in a newly developed educational program. A five member team was assembled with rough specifications for a system capable of milling medium-density materials as large as 2ft x 2ft x 2ft in size.</p>
           <h3>Background</h3>
-          <p>Implementing this solution required extensive research involving power requirements, machining, and environmental concerns. As a result, outside sources were consulted and provided mentorship in the execution of this project. Engineering drawings were created, parts and components were procured from a variety of sources [including overseas providers] and ...challenged with delivering a software solution that integrated CNC xxx code with xxxx to ensure that our solution operated efficiently on the X, Y and Z axes. An Arduino Microcontroller with a custom motor shield was selected to manage milling operation and communication activities.</p>
-          <h3>Learning Outcome</h3>
-          <p>To Do…</p>
+          <p>Implementing this solution required extensive research involving power requirements, machining, and environmental concerns. As a result, outside sources were consulted and provided mentorship in the execution of this project. Engineering drawings were created, parts and components were procured from a variety of sources [including overseas providers]. I was challenged with delivering a software solution that integrated CNC g code with motor instructions to ensure that our solution operated efficiently on the X, Y and Z axes. An Arduino Microcontroller with a custom motor shield was selected to manage milling operation and communication activities. To account for the power supply, cooling system, computer integration systems, and allowance for milling materials, the overall dimension of the system consumed a 6ft x 6ft x 6ft area.</p>
         </div>
       </div>
 
@@ -824,7 +832,8 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
 <script type="text/javascript">
   function slideTo(newPageId) {
     let newPage = document.getElementById(newPageId);
-    newPage.scrollIntoView({behavior: 'smooth'});
+    // newPage.scrollIntoView({behavior: 'smooth'});
+    newPage.scrollIntoView();
 
     let oldBtn = document.getElementsByClassName("active-btn")[0];
     oldBtn.classList.remove("active-btn");
@@ -838,6 +847,7 @@ As a college student, I’m incredibly grateful to be a part of the Carnegie Mel
       <script src="/background.js" defer></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+      <script src="https://unpkg.com/p5.collide2d"></script> 
 
     </body>
 </html>

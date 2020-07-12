@@ -1,18 +1,24 @@
 
-let areaPerBall, balls, mouseBall;
+let areaPerBall, collisionDist, balls, mouseBall;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  areaPerBall = 7500;
+  areaPerBall = 12500;
+  collisionDist = 150;
   balls = [];
 
-  mouseBall = new Ball(mouseX, mouseY, 0, 0, 0);
+  mouseBall = new Ball(0, mouseX, mouseY, collisionDist, 0, 0);
   balls.push(mouseBall);
 
   let numBalls = (windowWidth * windowHeight) / areaPerBall;
-  for (let i = 0; i < numBalls; i++) {
-    balls.push(new Ball(randInt(0, windowWidth), randInt(0, windowHeight), 2, Math.random() * 0.2, Math.random() * Math.PI));
+  for (let i = 1; i < numBalls+1; i++) {
+    balls.push(new Ball(i,
+      randInt(0, windowWidth),
+      randInt(0, windowHeight),
+      collisionDist,
+      Math.random() * 0.2,
+      Math.random() * Math.PI));
   }
 }
 
@@ -24,7 +30,7 @@ function draw() {
 
   for (let ball of balls) {
     ball.update();
-    ball.connectNearest2(150, 10);
+    ball.connectNearest2();
   }
 }
 
@@ -42,7 +48,7 @@ function windowResized() {
     let diff = ((windowWidth * windowHeight) / areaPerBall) - balls.length;
 
     for(let i = 0; i < diff; i++) {
-      balls.push(new Ball(randInt(0, windowWidth), randInt(0, windowHeight), 2, Math.random() * 0.2, Math.random() * Math.PI));
+      balls.push(new Ball(balls.length + i, randInt(0, windowWidth), randInt(0, windowHeight), 2, Math.random() * 0.2, Math.random() * Math.PI));
     }
   }
 }
@@ -59,7 +65,8 @@ function map(value, in_min, in_max, out_min, out_max) {
 }
 
 class Ball {
-  constructor(initX, initY, size, initForce, initForceDir) {
+  constructor(index, initX, initY, size, initForce, initForceDir) {
+    this.id = index;
     this.x = initX;
     this.y = initY;
     this.size = size;
@@ -70,12 +77,12 @@ class Ball {
   update() {
 
     //flip deltaX when out of bounds
-    if(this.x > 800-this.size/2 || this.x < this.size/2) {
+    if(this.x > windowWidth || this.x < 0) {
       this.deltaX *= -1;
     }
 
-    //flip deltaY when out of bounds (0.95 to soften the bounce)
-    if(this.y > 600-this.size/2 || this.y < this.size/2) {
+    //flip deltaY when out of bounds
+    if(this.y > windowHeight || this.y < 0) {
         this.deltaY *= -1;
     }
 
@@ -91,27 +98,18 @@ class Ball {
     return Math.sqrt(Math.pow((this.x - ball.x), 2) + Math.pow((this.y - ball.y), 2));
   }
 
-  connectNearest2(radius, maxConnections) {
-    let ballDists = [];
-    for (let ball of balls) {
+  connectNearest2() {
+    for(let i = this.id; i < balls.length; i++) {
+      let ball = balls[i];
+
       if(ball != this) {
-        let dist = this.distToBall(ball);
-        ballDists.push({
-          "ball": ball,
-          "dist": dist
-        })
-      }
-    }
+        if(collideCircleCircle(this.x, this.y, this.size, ball.x, ball.y, ball.size)) {
+          let dist = this.distToBall(ball);
+          let alpha = map(dist, 0, this.size * 2, 0.5, 0);
 
-    ballDists.sort((a, b) => (a.dist > b.dist) ? 1 : -1)
-
-    for(let i = 0; i < Math.min(maxConnections, ballDists.length); i++) {
-      if(ballDists[i].dist < radius) {
-        let ball = ballDists[i].ball;
-        let alpha = map(ballDists[i].dist, 0, radius, 0.5, 0);
-
-        stroke('rgba(46, 204, 113,' + alpha + ')');
-        line(this.x, this.y, ball.x, ball.y);
+          stroke('rgba(46, 204, 113,' + alpha + ')');
+          line(this.x, this.y, ball.x, ball.y);
+        }
       }
     }
   }

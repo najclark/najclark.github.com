@@ -23,7 +23,8 @@
 <script type="text/javascript">
   function slideTo(newPageId) {
     let newPage = document.getElementById(newPageId);
-    newPage.scrollIntoView({behavior: 'smooth'});
+    // newPage.scrollIntoView({behavior: 'smooth'});
+    newPage.scrollIntoView();
 
     let oldBtn = document.getElementsByClassName("active-btn")[0];
     oldBtn.classList.remove("active-btn");
