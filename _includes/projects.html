@@ -10,8 +10,8 @@
         <div class="header">
           {% if item.imgs.size > 0 %}
             <div id="carousel">
-              <button class="prev" onclick="slide('{{ item.images_dir }}-carousel', -1)">&lt;</button>
-              <ul id="{{ item.images_dir }}-carousel" showing=0>
+              <button class="prev" onclick="slide('{{ item.imgs }}-carousel', -1)">&lt;</button>
+              <ul id="{{ item.imgs }}-carousel" showing=0>
                 {% for image in site.static_files %}
                   {% if image.path contains item.imgs %}
                     <li>
@@ -20,7 +20,7 @@
                   {% endif %}
                 {% endfor %}
               </ul>
-              <button class="next" onclick="slide('{{ item.images_dir }}-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('{{ item.imgs }}-carousel', +1)">&gt;</button>
             </div>
           {% endif %}
 
@@ -41,12 +41,14 @@
     {% endfor %}
 </div>
 
-<pre class="tree">
-  projects/
+<div class="tree">
+  <h3>Projects</h3>
   {% for item in site.data.projects %}
-    ├─ <button onclick="changeProject('{{ item.name }}')">{{ item.name }}</button>
+    • <button onclick="changeProject('{{ item.name }}')">{{ item.name }}</button>
+    <br/>
+    <br/>
   {% endfor %}
-</pre>
+</div>
 
 <script type="text/javascript">
   function changeProject(name) {
@@ -67,5 +69,7 @@
     let newShowing = parseInt(carousel.getAttribute("showing")) + delta;
     newShowing = Math.min(Math.max(newShowing,0), slides.length-1);
     slides[newShowing].scrollIntoView({behavior: 'smooth'});
+
+    carousel.setAttribute("showing", newShowing);
   }
 </script>

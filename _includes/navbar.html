@@ -1,7 +1,11 @@
 <div id="track">
   {% for slide in site.data.navbar %}
     {% if slide.link == false %}
-      <div id="{{ slide.file }}" class="slide"> {% include {{ slide.file }} %} </div>
+      {% if forloop.first %}
+        <div id="{{ slide.file }}" class="slide active-slide"> {% include {{ slide.file }} %} </div>
+      {% else %}
+        <div id="{{ slide.file }}" class="slide"> {% include {{ slide.file }} %} </div>
+      {% endif %}
     {% endif %}
   {% endfor %}
 </div>
@@ -22,9 +26,13 @@
 
 <script type="text/javascript">
   function slideTo(newPageId) {
+    let oldSlide = document.getElementsByClassName("active-slide")[0];
+    oldSlide.classList.remove("active-slide");
+
     let newPage = document.getElementById(newPageId);
     // newPage.scrollIntoView({behavior: 'smooth'});
     newPage.scrollIntoView();
+    newPage.classList.add("active-slide");
 
     let oldBtn = document.getElementsByClassName("active-btn")[0];
     oldBtn.classList.remove("active-btn");

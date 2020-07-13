@@ -33,12 +33,15 @@
     {% endfor %}
 
 </div>
-<pre class="tree">
-  experience/
+
+<div class="tree">
+  <h3>Experience</h3>
   {% for item in site.data.experience %}
-    ├─ <button onclick="changeExperience('{{ item.title }}')">{{ item.title }}</button>
+    • <button onclick="changeExperience('{{ item.title }}')">{{ item.title }}</button>
+    <br/>
+    <br/>
   {% endfor %}
-</pre>
+</div>
 
 <script type="text/javascript">
   function changeExperience(title) {

@@ -30,9 +30,11 @@ li {
 button.prev, button.next {
   display: flex; font-size: 32px;
   align-items: center; justify-content: center;
-  color: #FFF; background-color: #333;
-  border-radius: 50%;
-  width: 44px; height: 44px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 #carousel {
@@ -40,7 +42,6 @@ button.prev, button.next {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
 }
 
 #carousel > * {
@@ -163,6 +164,23 @@ button.prev, button.next {
   font-weight: normal;
 }
 
+.header > a:link {
+  text-decoration: none;
+}
+
+.header > a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.header > a:hover {
+  text-decoration: underline;
+}
+
+.header > a:active {
+  text-decoration: underline;
+}
+
 .details > h3 {
   color: black;
   font-size: 1.5em;
@@ -172,8 +190,9 @@ button.prev, button.next {
 
 .tree {
   position: absolute;
-  top: 5%;
+  top: 50%;
   color: #ffffff;
+  transform: translateY(-50%);
 }
 
 .tree > button {
@@ -191,6 +210,20 @@ button.prev, button.next {
 
 .contact > i {
   padding-right: 20px;
+}
+
+.slide-img {
+  float: left;
+  margin: 0;
+  margin-right: 10px;
+  border-radius: 0.5em;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Customize the label (the container) */
+.tree > button {
+  font-size: 18px;
 }
 
 #background {
@@ -295,11 +328,12 @@ button.prev, button.next {
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
     </head>
-    <body>
+    <body onresize="handleResize()">
       <div id="track">
   
     
-      <div id="about.html" class="slide"> <div class="center-children">
+      
+        <div id="about.html" class="slide active-slide"> <div class="center-children">
 
     <div id="about-box">
       <div class="header">
@@ -337,10 +371,12 @@ I’m committed to adding value to visionary organizations that share a commitme
   
 </div>
  </div>
+      
     
   
     
-      <div id="experience.html" class="slide"> <div class="center-children">
+      
+        <div id="experience.html" class="slide"> <div class="center-children">
 
     
       
@@ -467,20 +503,31 @@ I’m committed to adding value to visionary organizations that share a commitme
     
 
 </div>
-<pre class="tree">
-  experience/
+
+<div class="tree">
+  <h3>Experience</h3>
   
-    ├─ <button onclick="changeExperience('Supercomputer Center')">Supercomputer Center</button>
+    • <button onclick="changeExperience('Supercomputer Center')">Supercomputer Center</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeExperience('Eye Physicians Clinic')">Eye Physicians Clinic</button>
+    • <button onclick="changeExperience('Eye Physicians Clinic')">Eye Physicians Clinic</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeExperience('The League Of Amazing Programmers')">The League Of Amazing Programmers</button>
+    • <button onclick="changeExperience('The League Of Amazing Programmers')">The League Of Amazing Programmers</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeExperience('Oracle Certified Associate')">Oracle Certified Associate</button>
+    • <button onclick="changeExperience('Oracle Certified Associate')">Oracle Certified Associate</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeExperience('PCAP Certified Associate')">PCAP Certified Associate</button>
+    • <button onclick="changeExperience('PCAP Certified Associate')">PCAP Certified Associate</button>
+    <br/>
+    <br/>
   
-</pre>
+</div>
 
 <script type="text/javascript">
   function changeExperience(title) {
@@ -496,12 +543,14 @@ I’m committed to adding value to visionary organizations that share a commitme
   }
 </script>
  </div>
+      
     
   
     
   
     
-      <div id="projects.html" class="slide"> <div class="center-children">
+      
+        <div id="projects.html" class="slide"> <div class="center-children">
 
     
       
@@ -511,8 +560,8 @@ I’m committed to adding value to visionary organizations that share a commitme
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
-              <ul id="-carousel" showing=0>
+              <button class="prev" onclick="slide('/media/barexam/-carousel', -1)">&lt;</button>
+              <ul id="/media/barexam/-carousel" showing=0>
                 
                   
                 
@@ -526,7 +575,7 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                     <li>
-                      <img class="header-img" src="/media/barexam/cnc.png" alt="image" />
+                      <img class="header-img" src="/media/barexam/genius.png" alt="image" />
                     </li>
                   
                 
@@ -540,8 +589,16 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                 
+                  
+                
+                  
+                
+                  
+                
+                  
+                
               </ul>
-              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('/media/barexam/-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -567,8 +624,8 @@ I’m committed to adding value to visionary organizations that share a commitme
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
-              <ul id="-carousel" showing=0>
+              <button class="prev" onclick="slide('/media/binary/-carousel', -1)">&lt;</button>
+              <ul id="/media/binary/-carousel" showing=0>
                 
                   
                 
@@ -592,8 +649,16 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                 
+                  
+                
+                  
+                
+                  
+                
+                  
+                
               </ul>
-              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('/media/binary/-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -619,8 +684,12 @@ I’m committed to adding value to visionary organizations that share a commitme
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
-              <ul id="-carousel" showing=0>
+              <button class="prev" onclick="slide('/media/genetic/-carousel', -1)">&lt;</button>
+              <ul id="/media/genetic/-carousel" showing=0>
+                
+                  
+                
+                  
                 
                   
                 
@@ -636,6 +705,12 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                     <li>
+                      <img class="header-img" src="/media/genetic/ga.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                    <li>
                       <img class="header-img" src="/media/genetic/genetic.png" alt="image" />
                     </li>
                   
@@ -644,8 +719,10 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                 
+                  
+                
               </ul>
-              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('/media/genetic/-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -671,8 +748,8 @@ I’m committed to adding value to visionary organizations that share a commitme
         <div class="header">
           
             <div id="carousel">
-              <button class="prev" onclick="slide('-carousel', -1)">&lt;</button>
-              <ul id="-carousel" showing=0>
+              <button class="prev" onclick="slide('/media/cnc/-carousel', -1)">&lt;</button>
+              <ul id="/media/cnc/-carousel" showing=0>
                 
                   
                 
@@ -691,13 +768,29 @@ I’m committed to adding value to visionary organizations that share a commitme
                   
                 
                   
+                    <li>
+                      <img class="header-img" src="/media/cnc/cnc2.jpg" alt="image" />
+                    </li>
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/cnc/cnc3.jpg" alt="image" />
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+                  
                 
                   
                 
                   
                 
               </ul>
-              <button class="next" onclick="slide('-carousel', +1)">&gt;</button>
+              <button class="next" onclick="slide('/media/cnc/-carousel', +1)">&gt;</button>
             </div>
           
 
@@ -718,18 +811,26 @@ I’m committed to adding value to visionary organizations that share a commitme
     
 </div>
 
-<pre class="tree">
-  projects/
+<div class="tree">
+  <h3>Projects</h3>
   
-    ├─ <button onclick="changeProject('Bar Exam')">Bar Exam</button>
+    • <button onclick="changeProject('Bar Exam')">Bar Exam</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeProject('Binary Counter')">Binary Counter</button>
+    • <button onclick="changeProject('Binary Counter')">Binary Counter</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeProject('Genetic Learning Library')">Genetic Learning Library</button>
+    • <button onclick="changeProject('Genetic Learning Library')">Genetic Learning Library</button>
+    <br/>
+    <br/>
   
-    ├─ <button onclick="changeProject('CNC Milling Machine')">CNC Milling Machine</button>
+    • <button onclick="changeProject('CNC Milling Machine')">CNC Milling Machine</button>
+    <br/>
+    <br/>
   
-</pre>
+</div>
 
 <script type="text/javascript">
   function changeProject(name) {
@@ -750,19 +851,25 @@ I’m committed to adding value to visionary organizations that share a commitme
     let newShowing = parseInt(carousel.getAttribute("showing")) + delta;
     newShowing = Math.min(Math.max(newShowing,0), slides.length-1);
     slides[newShowing].scrollIntoView({behavior: 'smooth'});
+
+    carousel.setAttribute("showing", newShowing);
   }
 </script>
  </div>
+      
     
   
     
-      <div id="contact.html" class="slide"> <div class="center-children">
+      
+        <div id="contact.html" class="slide"> <div class="center-children">
 
     <div id="contact-card">
       <div class="header">
         <h1>Contact Information</h1>
-        <p>Academics consume a great part of my days. However I make a concerted effort to respond to all correspondance in a timely manner.
-</p>
+        <pre id="intro">Thank You; for reviewing my credentials. I welcome the opportunity to discuss my experiences in more detail as well as potential opportunities you may have available at this time.
+
+Please be aware that academics consume the majority of my waking hours. However  I’m committed to responding to all correspondences in a timely manner.
+</pre>
       </div>
       <div id="social-list">
         
@@ -791,6 +898,7 @@ I’m committed to adding value to visionary organizations that share a commitme
 
 </div>
  </div>
+      
     
   
 </div>
@@ -831,9 +939,13 @@ I’m committed to adding value to visionary organizations that share a commitme
 
 <script type="text/javascript">
   function slideTo(newPageId) {
+    let oldSlide = document.getElementsByClassName("active-slide")[0];
+    oldSlide.classList.remove("active-slide");
+
     let newPage = document.getElementById(newPageId);
     // newPage.scrollIntoView({behavior: 'smooth'});
     newPage.scrollIntoView();
+    newPage.classList.add("active-slide");
 
     let oldBtn = document.getElementsByClassName("active-btn")[0];
     oldBtn.classList.remove("active-btn");
@@ -844,10 +956,11 @@ I’m committed to adding value to visionary organizations that share a commitme
 </script>
 
 
-      <script src="/background.js" defer></script>
+      <script src="/resize.js"></script>
+      <script src="/background.js"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-      <script src="https://unpkg.com/p5.collide2d"></script> 
+      <script src="https://unpkg.com/p5.collide2d"></script>
 
     </body>
 </html>
