@@ -4,15 +4,14 @@
     <title>{{ site.title }}</title>
     <style>{% include style.css %}</style>
         {% include head.html %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     </head>
-    <body onresize="handleResize()">
+    <body onresize="handleResize()" onload="initBackground()">
       {% include navbar.html %}
 
       <script src="/resize.js"></script>
       <script src="/background.js"></script>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-      <script src="https://unpkg.com/p5.collide2d"></script>
+      <canvas class="background"></canvas>
 
     </body>
 </html>
