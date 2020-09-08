@@ -355,7 +355,33 @@ I’m committed to adding value to visionary organizations that share a commitme
 
     
       
-      <div id="Supercomputer Center" class="card active-experience">
+      <div id="Google Computer Science Summer Institute" class="card active-experience">
+      
+        <div class="header">
+          
+              <a href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/" target="_blank">
+                  <img class="header-img" src="https://edu.google.com/images/resources/programs/computer-science-summer-institute.jpg">
+              </a>
+          
+          <h1>Google Computer Science Summer Institute</h1>
+          <h2>Program Participant</h2>
+
+          
+        </div>
+        <div class="details">
+          
+            <h3>Responsibilities</h3>
+            <p>Participate in a 4-week intensive Computer Science curriculum for high achieving students, taught by google engineers. A final project was created in a group of two, exercising remote development skills due to a 9 hour time difference. The final projet (Multiplayer Pacman) demonstrated our groups previous knowledge combined with the new concepts learned in the previous three weeks.</p>
+          
+          
+            <h3>Learning Outcome</h3>
+            <p>Lesson plans and daily coding practices were done using p5.js</p>
+          
+        </div>
+      </div>
+    
+      
+      <div id="Supercomputer Center" class="card hidden-experience">
       
         <div class="header">
           
@@ -445,7 +471,7 @@ I’m committed to adding value to visionary organizations that share a commitme
           <h2>Java SE 8 Programmer I</h2>
 
           
-            <p>Java was the first programming language I learned and I have made plenty of Android apps and Java applets. Seeking out an opportunity to prove my Java programming skills past small projects</p>
+            <p>Cool Java Certification</p>
           
         </div>
         <div class="details">
@@ -467,7 +493,7 @@ I’m committed to adding value to visionary organizations that share a commitme
           <h2>Python Programming</h2>
 
           
-            <p>Java was the first programming language I learned and I have made plenty of Android apps and Java applets. Seeking out an opportunity to prove my Java programming skills past small projects</p>
+            <p>Cool Python Certification</p>
           
         </div>
         <div class="details">
@@ -481,6 +507,10 @@ I’m committed to adding value to visionary organizations that share a commitme
 
 <div class="tree">
   <h3>Experience</h3>
+  
+    • <button onclick="changeExperience('Google Computer Science Summer Institute')">Google Computer Science Summer Institute</button>
+    <br/>
+    <br/>
   
     • <button onclick="changeExperience('Supercomputer Center')">Supercomputer Center</button>
     <br/>
@@ -529,7 +559,71 @@ I’m committed to adding value to visionary organizations that share a commitme
 
     
       
-      <div id="Bar Exam" class="card active-project">
+      <div id="Multiplayer Pacman" class="card active-project">
+      
+
+        <div class="header">
+          
+            <div id="carousel">
+              <button class="prev" onclick="slide('/media/multiplayerpacman/-carousel', -1)">&lt;</button>
+              <ul id="/media/multiplayerpacman/-carousel" showing=0>
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <img class="header-img" src="/media/multiplayerpacman/home.png" alt="image" />
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+              <button class="next" onclick="slide('/media/multiplayerpacman/-carousel', +1)">&gt;</button>
+            </div>
+          
+
+          <a href="http://pacman-live.herokuapp.com/" target="_blank">
+            <h1>Multiplayer Pacman</h1>
+          </a>
+          <!-- <h2>---</h2> -->
+        </div>
+
+        <div class="details">
+          <h3>Overview</h3>
+          <p>The inspriration for this multiplayer online game came from other io games like skribbl.io. With everyone in lockdown and socially distancing, people looked for new ways to connect with friends and family in a fun virtual way. This project aimed to do just that, connect friends and family with a spin on the classic game Pacman. In this multiplayer pacman, groups can create custom games, taking turns controlling pacman and avoiding the other players controlling ghosts.</p>
+          <h3>Background</h3>
+          <p>This project was developed as part of the CSSI final group project. The game utilizes HTML, CSS, JS, p5.js, and the socket.io library.</p>
+        </div>
+      </div>
+
+    
+      
+      <div id="Bar Exam" class="card hidden-project">
       
 
         <div class="header">
@@ -552,6 +646,8 @@ I’m committed to adding value to visionary organizations that share a commitme
                     <li>
                       <img class="header-img" src="/media/barexam/genius.png" alt="image" />
                     </li>
+                  
+                
                   
                 
                   
@@ -640,6 +736,8 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                 
+                  
+                
               </ul>
               <button class="next" onclick="slide('/media/binary/-carousel', +1)">&gt;</button>
             </div>
@@ -698,6 +796,8 @@ I’m committed to adding value to visionary organizations that share a commitme
                     <li>
                       <img class="header-img" src="/media/genetic/genetic.png" alt="image" />
                     </li>
+                  
+                
                   
                 
                   
@@ -776,6 +876,8 @@ I’m committed to adding value to visionary organizations that share a commitme
                 
                   
                 
+                  
+                
               </ul>
               <button class="next" onclick="slide('/media/cnc/-carousel', +1)">&gt;</button>
             </div>
@@ -800,6 +902,10 @@ I’m committed to adding value to visionary organizations that share a commitme
 
 <div class="tree">
   <h3>Projects</h3>
+  
+    • <button onclick="changeProject('Multiplayer Pacman')">Multiplayer Pacman</button>
+    <br/>
+    <br/>
   
     • <button onclick="changeProject('Bar Exam')">Bar Exam</button>
     <br/>
